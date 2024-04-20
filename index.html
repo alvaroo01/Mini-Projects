@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/script.js"></script>
+    <title>Color Flipper</title>
 </head>
+
 <body>
-    <p>dsadas</p>
+    <header>
+        <div class="navbar">
+            <div class="collor-flipper-title">
+                <p>Flip Color</p>
+            </div>
+            <div class="navbar-buttons">
+                <p id="simple-button" class="simple-button">Simple</p>
+                <p id="hex-button" class="hex-button">Hex</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="text-container">Background Color: <p id="color-code"> #eee8aa</p>
+            </div>
+            <div class="button-container">
+                <p id="click-me-button">CLICK ME</p>
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>
