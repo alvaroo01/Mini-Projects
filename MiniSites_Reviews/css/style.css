@@ -1,37 +1,144 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: aliceblue;
+  --background-review: white;
+  --main-blue: #5cafd3;
+  --main-blue-softer: #75c2e3e1;
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+}
+
+body {
+  font-family: var(--ff-secondary);
+}
+
+h4 {
+    font-family: var(--ff-primary);
+}
 
 .background {
-    width: 100%;
-    height: 100vh;
-    background-color: aliceblue;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 
-    'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .background .review-container {
-    background-color: white;
-    width: 500px;
-    height: 300px;
-    margin: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  background-color: var(--background-review);
+  width: 550px;
+  height: 450px;
+  margin: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  overflow: auto;
+  border-radius: 10px;
 }
 
-.background .underline{
-    width:50px;
-    height: 4px;
-    background-color: #5cafd3;
-    border-radius: 2px;
-    margin: 1rem;
+.background .underline {
+  width: 50px;
+  height: 4px;
+  background-color: var(--main-blue);
+  border-radius: 2px;
+  margin: 1rem;
+}
+
+.review {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.image-container {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  border-radius: 50%;
+}
+
+.image-container img {
+  /* sets how the content of a replaced element, such as an <img> or <video> , should be resized to fit its container.  */
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border-radius: 50%;
+}
+
+.image-container::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-blue);
+  position: absolute;
+  top: -0.25rem;
+  right: -0.5rem;
+  border-radius: 50%;
+}
+
+.image-container::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 0.8rem;
+  color: var(--background-review);
+  content: "\f10e";
+  position: absolute;
+  background-color: var(--main-blue);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  transform: translateY(25%);
+  display: grid;
+  top: 1px;
+  place-items: center;
+}
+
+#reviewer-name {
+  padding-top: 1rem;
+  padding-bottom: 0.2rem;
+  text-transform: capitalize;
+  line-height: 1.25;
+}
+
+#reviewer-job {
+    letter-spacing: 3px;
+    font-size: 0.8rem;  
+}
+
+#review-text{
+    padding: 1rem;
+}
+
+.previous-arrow, .next-arrow{
+    background: transparent;
+    border: transparent;
+    padding: 0rem 1rem;
+    cursor: pointer;
+    color: var(--main-blue);
+}
+
+.surprise {
+    font-family: var(--ff-secondary);
+    background: var(--main-blue-softer);
+    border: 2px solid var(--main-blue);
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    cursor: pointer; 
 }
